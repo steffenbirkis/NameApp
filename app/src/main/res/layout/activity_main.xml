@@ -10,6 +10,7 @@
         android:id="@+id/Bilder"
         android:layout_width="143dp"
         android:layout_height="56dp"
+        android:onClick="onPic"
         android:text="Pictures"
         app:layout_constraintBottom_toTopOf="@+id/Navn"
         app:layout_constraintEnd_toEndOf="parent"

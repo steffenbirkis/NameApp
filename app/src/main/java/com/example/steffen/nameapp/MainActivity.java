@@ -12,19 +12,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button pic=(Button)findViewById(R.id.Bilder);
 
-        pic.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Intent myIntent = new Intent(view.getContext(), PictureActivity.class);
-                startActivityForResult(myIntent, 0);
 
-            }
+    }
 
-        });
+    public void onPic(View view){
+        Intent myIntent = new Intent(view.getContext(), PictureActivity.class);
+        startActivityForResult(myIntent, 0);
+    }
+
 
         //Halla bror !!!
         //sup
     }
 
-}
+
