@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Name App</string>
-    <string name="knapp">Add Picture</string>
+    <string name="knapp1">Add picture from gallery</string>
+    <string name="knapp2">Add Picture from camera</string>
 </resources>

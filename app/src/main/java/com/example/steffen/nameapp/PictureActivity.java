@@ -3,6 +3,7 @@ package com.example.steffen.nameapp;
 /**
  * Created by Steffen on 11.01.2018.
  */
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,11 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     });
 }
+public void addG(View view){
+    Intent myIntent = new Intent(view.getContext(), GalleryActivity.class);
+    startActivityForResult(myIntent, 0);
+}
+
 
 
 
