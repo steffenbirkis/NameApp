@@ -28,8 +28,8 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     });
 }
-public void addG(View view){
-    Intent myIntent = new Intent(view.getContext(), GalleryActivity.class);
+public void addNew(View view){
+    Intent myIntent = new Intent(view.getContext(), addActivity.class);
     startActivityForResult(myIntent, 0);
 }
 
