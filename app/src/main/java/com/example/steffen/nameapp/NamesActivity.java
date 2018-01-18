@@ -23,11 +23,10 @@ public class NamesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_names);
 
         ListView listview = (ListView) findViewById(R.id.names_listview);
-        List<String> list = new ArrayList<String>();
-        list.add("Steffen");
-        list.add("Kevin");
-        list.add("Sondre");
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
+        Integer list[];
+        ImageAdapter ia = new ImageAdapter(this);
+        list = ia.getmThumbIds();
+        ArrayAdapter<Integer> arrayAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_list_item_1, list);
         listview.setAdapter(arrayAdapter);
         listview.setAdapter(arrayAdapter);
 
