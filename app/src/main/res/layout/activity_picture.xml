@@ -47,7 +47,7 @@
                 android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:gravity="center"
-                android:onClick="onPickImage"
+                android:onClick="addNew"
                 android:text="@string/knapp1"
                 android:textSize="20sp"
                 android:textStyle="bold"
