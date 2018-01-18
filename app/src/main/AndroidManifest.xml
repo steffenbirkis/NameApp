@@ -26,6 +26,7 @@
 
         </activity>
         <activity android:name=".addActivity"></activity>
+        <activity android:name=".NamesActivity"></activity>
 
 
     </application>
