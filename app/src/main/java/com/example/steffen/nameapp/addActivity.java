@@ -4,13 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by Steffen on 11.01.2018.
  */
 
-public class addActivity {
+public class addActivity extends AppCompatActivity {
 
     /** Sjekke om det er kamera på enheten */
     /**
@@ -25,13 +29,10 @@ public class addActivity {
             return false;
         }
     }*/
-    private static final int PICK_IMAGE_ID = 234; // the number doesn't matter
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    public void onPickImage(View view) {
 
-    }
 
 }
 
 
- //class
