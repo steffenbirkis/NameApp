@@ -6,9 +6,9 @@ package com.example.steffen.nameapp;
 
 public class People {
    private String name;
-   private String uri;
+   private Integer uri;
 
-   public People(String n, String u){
+   public People(String n, Integer u){
        this.name=n;
        this.uri=u;
    }
@@ -16,14 +16,14 @@ public class People {
    public String getName(){
        return name;
    }
-   public String getUri(){
+   public Integer getUri(){
        return uri;
    }
    public void setName(String names){
        this.name=names;
 
    }
-   public void setUri(String uris){
+   public void setUri(Integer uris){
        this.uri=uris;
    }
 
