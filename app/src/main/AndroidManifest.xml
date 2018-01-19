@@ -22,11 +22,9 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".PictureActivity">
-
-        </activity>
-        <activity android:name=".addActivity"></activity>
-        <activity android:name=".NamesActivity"></activity>
+        <activity android:name=".PictureActivity" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".addActivity" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".NamesActivity" android:parentActivityName=".MainActivity"></activity>
 
 
     </application>
