@@ -5,6 +5,22 @@ package com.example.steffen.nameapp;
  */
 
 public class People {
-    String name;
-    String fileName;
+   private String name;
+   private String uri;
+
+   public String getName(){
+       return name;
+   }
+   public String getUri(){
+       return uri;
+   }
+   public void setName(String names){
+       this.name=names;
+
+   }
+   public void setUri(String uris){
+       this.uri=uris;
+   }
+
 }
+
