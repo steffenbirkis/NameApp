@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class NamesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_names);
 
         ListView listview = (ListView) findViewById(R.id.names_listview);
-        People list[];
+        final People list[];
         String stringlist[];
         ImageAdapter ia = new ImageAdapter(this);
         list = ia.getPeople();
@@ -37,8 +38,10 @@ public class NamesActivity extends AppCompatActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(NamesActivity.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
+                setContentView(R.layout.activity_singlepic);
+                ImageView iw = (ImageView) findViewById(R.id.ImageView2);
+                Integer image = list[position].getUri();
+                iw.setImageResource(image);
             }
         });
     }
