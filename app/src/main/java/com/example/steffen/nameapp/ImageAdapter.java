@@ -19,7 +19,7 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     public int getCount() {
-        return mThumbIds.length;
+        return plist.length;
     }
 
     public Object getItem(int position) {
@@ -42,8 +42,14 @@ public class ImageAdapter extends BaseAdapter {
         } else {
             imageView = (ImageView) convertView;
         }
+        People[] ia=getPeople();
 
-        imageView.setImageResource(mThumbIds[position]);
+        int i = 0;
+        if(i<ia.length){
+
+            imageView.setImageResource(ia[i].getUri());
+            i++;
+        }
         return imageView;
     }
 
@@ -59,20 +65,22 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.sample_0, R.drawable.sample_1,
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
+            R.drawable.sample_6,
     };
     public Integer[] getmThumbIds(){
       return mThumbIds;
     }
 
+    private People plist[] ={  new People("Steffen", R.drawable.sample_2),
+    new People("Steffen", R.drawable.sample_3),
+     new People ("Steffen", R.drawable.sample_4),
+    new People ("Steffen", R.drawable.sample_4),
+    };
+
     public People[] getPeople(){
 
-    People plist[] = new People[3];
-    People p1 = new People ("Steffen", R.drawable.sample_2);
-    People p2 = new People ("Steffen", R.drawable.sample_3);
-    People p3 = new People ("Steffen", R.drawable.sample_4);
-    plist[0] = p1;
-    plist[1] = p2;
-    plist[2] = p3;
+
+
+
     return plist;
 }}
