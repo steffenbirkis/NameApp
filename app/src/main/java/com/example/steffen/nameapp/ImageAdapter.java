@@ -36,18 +36,15 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(350,350));
+            imageView.setLayoutParams(new GridView.LayoutParams(350, 350));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(5, 10, 5, 5);
         } else {
             imageView = (ImageView) convertView;
         }
-        People[] ia=getPeople();
+        People[] ia = getPeople();
 
-
-
-            imageView.setImageResource(ia[position].getUri());
-
+        imageView.setImageResource(ia[position].getUri());
 
         return imageView;
     }
@@ -66,18 +63,30 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.sample_4, R.drawable.sample_5,
             R.drawable.sample_6,
     };
-    public Integer[] getmThumbIds(){
-      return mThumbIds;
+
+    public Integer[] getmThumbIds() {
+        return mThumbIds;
     }
 
-    private People plist[] ={  new People("Steffen", R.drawable.sample_2),
-    new People("Steffen", R.drawable.sample_3),
-     new People ("Steffen", R.drawable.sample_4),
-    new People ("Steffen", R.drawable.sample_4),
+    public People plist[] = {
+            new People("Steffen", R.drawable.sample_2),
+            new People("Sondre", R.drawable.sample_3),
+            new People("Kevin", R.drawable.sample_4),
+            new People("Tommy", R.drawable.sample_5),
     };
 
-    public People[] getPeople(){
+    public People[] getPeople() {
 
+        return plist;
+    }
 
-    return plist;
-}}
+    public void addPeople(People s) {
+        People list[] = new People[plist.length + 1];
+        for (int i = 0; i < plist.length; i++) {
+            list[i] = plist[i];
+        }
+        list[list.length - 1] = s;
+
+        plist = list;
+    }
+}
