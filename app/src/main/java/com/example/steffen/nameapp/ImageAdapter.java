@@ -64,4 +64,15 @@ public class ImageAdapter extends BaseAdapter {
     public Integer[] getmThumbIds(){
       return mThumbIds;
     }
-}
+
+    public People[] getPeople(){
+
+    People plist[] = new People[3];
+    People p1 = new People ("Steffen", R.drawable.sample_2);
+    People p2 = new People ("Steffen", R.drawable.sample_3);
+    People p3 = new People ("Steffen", R.drawable.sample_4);
+    plist[0] = p1;
+    plist[1] = p2;
+    plist[2] = p3;
+    return plist;
+}}
