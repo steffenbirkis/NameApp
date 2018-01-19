@@ -8,6 +8,11 @@ public class People {
    private String name;
    private String uri;
 
+   public People(String n, String u){
+       this.name=n;
+       this.uri=u;
+   }
+
    public String getName(){
        return name;
    }
@@ -21,6 +26,7 @@ public class People {
    public void setUri(String uris){
        this.uri=uris;
    }
+
 
 }
 
