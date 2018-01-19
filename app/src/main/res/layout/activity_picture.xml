@@ -41,8 +41,8 @@
             <Button
                 android:id="@+id/btnallservice1"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
+                android:layout_width="377dp"
+                android:layout_height="53dp"
 
                 android:layout_marginBottom="8dp"
                 android:ems="10"
