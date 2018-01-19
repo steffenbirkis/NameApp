@@ -25,7 +25,7 @@ protected void onCreate(Bundle savedInstanceState) {
     gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         public void onItemClick(AdapterView<?> parent, View v,
                                 int position, long id) {
-            Toast.makeText(PictureActivity.this, "" + plist[position],
+            Toast.makeText(PictureActivity.this, "" + plist[position].getName(),
                     Toast.LENGTH_SHORT).show();
         }
     });
