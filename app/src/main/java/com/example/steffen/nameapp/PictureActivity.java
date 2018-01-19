@@ -17,14 +17,15 @@ public class PictureActivity extends AppCompatActivity  {
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_picture);
-
+    ImageAdapter ia = new ImageAdapter(this);
+    final People plist[] = ia.getPeople();
     GridView gridview = (GridView) findViewById(R.id.gridview);
-    gridview.setAdapter(new ImageAdapter(this));
+    gridview.setAdapter(ia);
 
     gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         public void onItemClick(AdapterView<?> parent, View v,
                                 int position, long id) {
-            Toast.makeText(PictureActivity.this, "" + position,
+            Toast.makeText(PictureActivity.this, "" + plist[position],
                     Toast.LENGTH_SHORT).show();
         }
     });
