@@ -44,12 +44,11 @@ public class ImageAdapter extends BaseAdapter {
         }
         People[] ia=getPeople();
 
-        int i = 0;
-        if(i<ia.length){
 
-            imageView.setImageResource(ia[i].getUri());
-            i++;
-        }
+
+            imageView.setImageResource(ia[position].getUri());
+
+
         return imageView;
     }
 
@@ -78,8 +77,6 @@ public class ImageAdapter extends BaseAdapter {
     };
 
     public People[] getPeople(){
-
-
 
 
     return plist;

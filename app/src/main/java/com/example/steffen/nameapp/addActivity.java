@@ -76,6 +76,9 @@ public class addActivity extends AppCompatActivity {
             mImageView.setImageBitmap(imageBitmap);
         }
     }
+    public void addPeople(people){
+
+    }
 
     }
 
