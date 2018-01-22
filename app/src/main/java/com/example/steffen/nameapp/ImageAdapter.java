@@ -36,7 +36,7 @@ public class ImageAdapter extends BaseAdapter {
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
-        createPeople();
+        
         ImageView imageView;
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
@@ -54,15 +54,8 @@ public class ImageAdapter extends BaseAdapter {
         return imageView;
     }
 
-    // references to our images
-    static Bitmap bitmap;
-    private void createPeople() {
-        bitmap = BitmapFactory.decodeFile("R.drawable.sample0");
-        bitmap = Bitmap.createScaledBitmap(bitmap,350, 350, true);
-        BitmapDrawable bd = new BitmapDrawable("R.drawable.sample0");
 
 
-    }
 
     public static People plist[] = {
     new People("Steffen",new BitmapDrawable(bitmap)),
