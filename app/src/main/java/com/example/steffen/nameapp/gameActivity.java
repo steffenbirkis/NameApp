@@ -46,7 +46,7 @@ public class gameActivity extends AppCompatActivity {
     protected void answer(){
         EditText user = (EditText) findViewById(R.id.editText);
         String input = user.getText().toString();
-        if(input.equals(list[count].getName())){
+        if(input.toLowerCase().equals(list[count].getName().toLowerCase())){
             score = score+1;
             Toast.makeText(gameActivity.this, "Correct - Current Score:"+score,
                     Toast.LENGTH_LONG).show();
