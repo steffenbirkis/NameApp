@@ -1,5 +1,6 @@
 package com.example.steffen.nameapp;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -40,8 +41,8 @@ public class NamesActivity extends AppCompatActivity {
                                     int position, long id) {
                 setContentView(R.layout.activity_singlepic);
                 ImageView iw = (ImageView) findViewById(R.id.ImageView2);
-                Integer image = list[position].getUri();
-                iw.setImageResource(image);
+                BitmapDrawable image = list[position].getUri();
+                iw.setImageDrawable(image);
             }
         });
     }

@@ -1,6 +1,7 @@
 package com.example.steffen.nameapp;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -44,7 +45,7 @@ public class ImageAdapter extends BaseAdapter {
         }
         People[] ia = getPeople();
 
-        imageView.setImageResource(ia[position].getUri());
+        imageView.setImageDrawable(ia[position].getUri());
 
         return imageView;
     }
@@ -54,11 +55,11 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4, R.drawable.sample_5,
             R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
+            R.drawable.sample0, R.drawable.sample_1,
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4, R.drawable.sample_5,
             R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
+            R.drawable.sample0, R.drawable.sample_1,
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4, R.drawable.sample_5,
             R.drawable.sample_6,
@@ -68,19 +69,18 @@ public class ImageAdapter extends BaseAdapter {
         return mThumbIds;
     }
 
-    public People plist[] = {
-            new People("Steffen", R.drawable.sample_2),
-            new People("Sondre", R.drawable.sample_3),
-            new People("Kevin", R.drawable.sample_4),
-            new People("Tommy", R.drawable.sample_5),
-    };
+    public static People plist[] = {
+    new People("Steffen",new BitmapDrawable("R.drawable.sample0"))
 
+
+
+    };
     public People[] getPeople() {
 
         return plist;
     }
 
-    public void addPeople(People s) {
+    public static void addPeople(People s) {
         People list[] = new People[plist.length + 1];
         for (int i = 0; i < plist.length; i++) {
             list[i] = plist[i];

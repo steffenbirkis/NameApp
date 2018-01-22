@@ -1,6 +1,7 @@
 package com.example.steffen.nameapp;
 
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,8 +30,8 @@ public class gameActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_game);
         ImageView iw = (ImageView) findViewById(R.id.imageView3);
-        Integer image = list[count].getUri();
-        iw.setImageResource(image);
+        BitmapDrawable image = list[count].getUri();
+        iw.setImageDrawable(image);
 
         Button button = (Button) findViewById(R.id.button_game);
 
@@ -58,8 +59,8 @@ public class gameActivity extends AppCompatActivity {
         if(count<list.length) {
             setContentView(R.layout.activity_game);
             ImageView iw = (ImageView) findViewById(R.id.imageView3);
-            Integer image = list[count].getUri();
-            iw.setImageResource(image);
+            BitmapDrawable image = list[count].getUri();
+            iw.setImageDrawable(image);
             Button button = (Button) findViewById(R.id.button_game);
 
             button.setOnClickListener( new View.OnClickListener()

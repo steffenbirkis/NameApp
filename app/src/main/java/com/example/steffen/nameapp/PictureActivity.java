@@ -5,6 +5,7 @@ package com.example.steffen.nameapp;
  */
 
 import android.content.Intent;
+import android.media.Image;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,12 +15,14 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 public class PictureActivity extends AppCompatActivity {
+    private ImageAdapter ia;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
-        ImageAdapter ia = new ImageAdapter(this);
-        final People plist[] = ia.getPeople();
+         ia = new ImageAdapter(this);
+          final People plist[] = ia.getPeople();
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(ia);
 
@@ -32,10 +35,13 @@ public class PictureActivity extends AppCompatActivity {
         });
     }
 
+
+
     public void addNew(View view) {
         Intent myIntent = new Intent(view.getContext(), addActivity.class);
         startActivityForResult(myIntent, 0);
     }
+
 
 
 }

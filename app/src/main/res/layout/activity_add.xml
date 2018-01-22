@@ -44,6 +44,7 @@
         android:id="@+id/Save"
         android:layout_width="112dp"
         android:layout_height="41dp"
+        android:onClick="Save"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
