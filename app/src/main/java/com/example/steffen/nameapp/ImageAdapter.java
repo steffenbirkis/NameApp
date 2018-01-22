@@ -55,22 +55,18 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     // references to our images
-    static People plist[];
-    private static void createPeople() {
-        Bitmap bitmap = BitmapFactory.decodeFile("R.drawable.sample0");
-        BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
-        People list []={
-                new People("Kevin", bitmapDrawable),
-        };
-        plist = list;
+    static Bitmap bitmap;
+    private void createPeople() {
+        bitmap = BitmapFactory.decodeFile("R.drawable.sample0");
+
     }
 
-    //public static People plist[] = {
-    //new People("Steffen",new BitmapDrawable("R.drawable.sample0")),
-    //new People("Kevin",new BitmapDrawable("R.drawable.sample_1")),
+    public static People plist[] = {
+    new People("Steffen",new BitmapDrawable(bitmap)),
+    new People("Kevin",new BitmapDrawable(bitmap)),
     //new People("Sondre",new BitmapDrawable("R.drawable.sample_2"))
 
-   // };
+    };
     public People[] getPeople() {
 
         return plist;
