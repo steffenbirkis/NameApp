@@ -43,7 +43,7 @@ public class NamesActivity extends AppCompatActivity {
                                     int position, long id) {
                 setContentView(R.layout.activity_singlepic);
                 ImageView iw = (ImageView) findViewById(R.id.ImageView2);
-                Drawable image = list[position].getUri();
+                BitmapDrawable image = list[position].getUri();
                 iw.setImageDrawable(image);
             }
         });
