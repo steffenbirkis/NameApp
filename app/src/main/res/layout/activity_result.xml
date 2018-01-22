@@ -16,14 +16,18 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:text="Your score:" />
+            android:gravity="center"
+            android:text="Your score:"
+            android:textSize="36sp" />
+
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="36sp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
