@@ -1,5 +1,6 @@
 package com.example.steffen.nameapp;
 
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -45,5 +46,10 @@ public class NamesActivity extends AppCompatActivity {
                 iw.setImageDrawable(image);
             }
         });
+
+    }
+    public void addNew(View view) {
+        Intent myIntent = new Intent(view.getContext(), addActivity.class);
+        startActivityForResult(myIntent, 0);
     }
 }
