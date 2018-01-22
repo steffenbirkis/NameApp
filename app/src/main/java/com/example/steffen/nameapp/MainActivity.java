@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(myIntent, 0);
     }
 
+    public void onGame(View view){
+        Intent myIntent = new Intent(view.getContext(), gameActivity.class);
+        startActivityForResult(myIntent, 0);
+    }
         //Halla bror !!!
         //sup
     }
