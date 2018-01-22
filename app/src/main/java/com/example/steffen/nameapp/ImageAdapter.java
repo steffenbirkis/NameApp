@@ -2,6 +2,7 @@ package com.example.steffen.nameapp;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -44,8 +45,11 @@ public class ImageAdapter extends BaseAdapter {
             imageView = (ImageView) convertView;
         }
         People[] ia = getPeople();
+        Drawable drawable=ia[position].getUri();
 
-        imageView.setImageDrawable(ia[position].getUri());
+        imageView.setImageDrawable(drawable);
+
+       // imageView.setImageDrawable((ia[position].getUri());
 
         return imageView;
     }
