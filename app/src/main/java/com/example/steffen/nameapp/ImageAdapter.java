@@ -49,29 +49,14 @@ public class ImageAdapter extends BaseAdapter {
 
         imageView.setImageDrawable(drawable);
 
-       // imageView.setImageDrawable((ia[position].getUri());
 
         return imageView;
     }
 
     // references to our images
-    private Integer[] mThumbIds = {
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6,
-    };
 
-    public Integer[] getmThumbIds() {
-        return mThumbIds;
-    }
+
+
 
     public static People plist[] = {
     new People("Steffen",new BitmapDrawable("R.drawable.sample0")),
