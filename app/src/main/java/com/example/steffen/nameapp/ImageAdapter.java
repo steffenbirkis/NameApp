@@ -62,8 +62,8 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     public static People plist[] = {
-    new People("Steffen",new BitmapDrawable(bitmap)),
-    new People("Kevin",new BitmapDrawable(bitmap)),
+    new People("Steffen",new BitmapDrawable("R.drawable.sample0")),
+    new People("Kevin",new BitmapDrawable("D:\\DAT153\\NameApp\\app\\src\\main\\res\\drawable\\sample_1.jpg")),
     //new People("Sondre",new BitmapDrawable("R.drawable.sample_2"))
 
     };
