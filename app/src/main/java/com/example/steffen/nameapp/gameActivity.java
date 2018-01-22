@@ -60,6 +60,14 @@ public class gameActivity extends AppCompatActivity {
             ImageView iw = (ImageView) findViewById(R.id.imageView3);
             Integer image = list[count].getUri();
             iw.setImageResource(image);
+            Button button = (Button) findViewById(R.id.button_game);
+
+            button.setOnClickListener( new View.OnClickListener()
+            {
+                public void onClick (View v){
+                    answer();
+                }
+            });
         }else{
             setContentView(R.layout.activity_result);
             TextView txt = (TextView) findViewById(R.id.textView2);
