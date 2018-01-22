@@ -7,9 +7,25 @@
     <!-- tools:showIn="@layout/navigation_activity_main"-->
 
 
+    <Button
+        android:id="@+id/btnallservice1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="377dp"
+        android:layout_height="53dp"
 
-
-
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:gravity="center"
+        android:onClick="addNew"
+        android:text="@string/knapp1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gridview"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gridview" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -37,24 +53,6 @@
                 app:layout_constraintStart_toStartOf="parent">
 
             </GridView>
-
-            <Button
-                android:id="@+id/btnallservice1"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="377dp"
-                android:layout_height="53dp"
-
-                android:layout_marginBottom="8dp"
-                android:ems="10"
-                android:gravity="center"
-                android:onClick="addNew"
-                android:text="@string/knapp1"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/gridview"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/gridview" />
 
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>

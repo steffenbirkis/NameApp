@@ -1,8 +1,10 @@
 package com.example.steffen.nameapp;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -44,30 +46,41 @@ public class ImageAdapter extends BaseAdapter {
         } else {
             imageView = (ImageView) convertView;
         }
+
         People[] ia = getPeople();
+
+        
+
+
         Drawable drawable=ia[position].getUri();
 
         imageView.setImageDrawable(drawable);
 
 
+
+
+
+
+
         return imageView;
+
     }
 
     // references to our images
 
 
 
-
     public static People plist[] = {
-    new People("Steffen",new BitmapDrawable("R.drawable.sample0")),
-    new People("Kevin",new BitmapDrawable("R.drawable.sample_1")),
-    new People("Sondre",new BitmapDrawable("R.drawable.sample_2"))
+
 
     };
+
+
     public People[] getPeople() {
 
         return plist;
     }
+
 
     public static void addPeople(People s) {
         People list[] = new People[plist.length + 1];
@@ -78,4 +91,5 @@ public class ImageAdapter extends BaseAdapter {
 
         plist = list;
     }
+
 }

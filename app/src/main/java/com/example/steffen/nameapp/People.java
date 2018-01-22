@@ -1,6 +1,7 @@
 package com.example.steffen.nameapp;
 
 import android.graphics.drawable.BitmapDrawable;
+import android.renderscript.Element;
 
 /**
  * Created by Steffen on 18.01.2018.
@@ -11,10 +12,12 @@ public class People {
    private BitmapDrawable uri;
 
 
+
    public People(String n, BitmapDrawable u){
        this.name=n;
        this.uri=u;
    }
+
 
    public String getName(){
        return name;
@@ -29,6 +32,7 @@ public class People {
    public void setUri(BitmapDrawable uris){
        this.uri=uris;
    }
+
 
 
 
