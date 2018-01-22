@@ -24,7 +24,6 @@
         </activity>
         <activity android:name=".PictureActivity" android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".addActivity" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".NamesActivity" android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".gameActivity" android:parentActivityName=".MainActivity"></activity>
 
     </application>

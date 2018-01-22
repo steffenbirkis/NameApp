@@ -20,14 +20,12 @@ public class gameActivity extends AppCompatActivity {
 
     People[] list;
     ImageAdapter ia;
-    Integer score;
-    Integer count;
+    Integer score = 0;
+    Integer count = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ia = new ImageAdapter(this);
         list = ia.getPeople();
-        score = 0;
-        count = 0;
 
         setContentView(R.layout.activity_game);
         ImageView iw = (ImageView) findViewById(R.id.imageView3);
@@ -49,9 +47,9 @@ public class gameActivity extends AppCompatActivity {
         EditText user = (EditText) findViewById(R.id.editText);
         String input = user.getText().toString();
         if(input.equals(list[count].getName())){
+            score = score+1;
             Toast.makeText(gameActivity.this, "Correct - Current Score:"+score,
                     Toast.LENGTH_LONG).show();
-            score = score+1;
         }else{
             Toast.makeText(gameActivity.this, "Wrong - Current Score:"+score,
                     Toast.LENGTH_LONG).show();
