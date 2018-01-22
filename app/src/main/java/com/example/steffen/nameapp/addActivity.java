@@ -95,7 +95,7 @@ public class addActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             imageBitmap = (Bitmap) extras.get("data");
             mImageView.setImageBitmap(imageBitmap);
-        }
+        } 
 
     }
 
