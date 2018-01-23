@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 /**
  * Created by kevin on 22-Jan-18.
  */
@@ -27,7 +29,7 @@ public class gameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ia = new ImageAdapter(this);
         list = ia.getPeople();
-
+        list = shuffleArray(list);
         setContentView(R.layout.activity_game);
         ImageView iw = (ImageView) findViewById(R.id.imageView3);
         BitmapDrawable image = list[count].getUri();
@@ -76,5 +78,18 @@ public class gameActivity extends AppCompatActivity {
         }
 
     }
-
+    static People[] shuffleArray(People[] ar)
+    {
+        Random rnd = new Random();
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+            People a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+        return ar;
+    }
 }
+
+
