@@ -1,12 +1,16 @@
 package com.example.steffen.nameapp;
 
 
+import android.annotation.TargetApi;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Scene;
+import android.transition.Fade;
+import android.transition.Transition;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -27,18 +31,17 @@ public class gameActivity extends AppCompatActivity {
     ImageAdapter ia;
     Integer score = 0;
     Integer count = 0;
-    Scene mScene;
+    ImageView iw;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ia = new ImageAdapter(this);
         list = ia.getPeople();
         list = shuffleArray(list);
         setContentView(R.layout.activity_game);
-        ImageView iw = (ImageView) findViewById(R.id.imageView3);
+        iw = (ImageView) findViewById(R.id.imageView3);
         BitmapDrawable image = list[count].getUri();
         iw.setImageDrawable(image);
-
-
 
         Button button = (Button) findViewById(R.id.button_game);
 
@@ -46,13 +49,21 @@ public class gameActivity extends AppCompatActivity {
         {
             public void onClick (View v){
                 answer();
-
             }
         });
     }
 
 
     protected void answer(){
+
+        RotateAnimation anim = new RotateAnimation(0f, 350f, 15f, 15f);
+        anim.setInterpolator(new LinearInterpolator());
+        anim.setRepeatCount(Animation.INFINITE);
+        anim.setDuration(700);
+        iw = (ImageView) findViewById(R.id.imageView3);
+        iw.startAnimation(anim);
+
+
         EditText user = (EditText) findViewById(R.id.editText);
         String input = user.getText().toString();
         if(input.toLowerCase().equals(list[count].getName().toLowerCase())){
@@ -66,7 +77,7 @@ public class gameActivity extends AppCompatActivity {
         count = count+1;
         if(count<list.length) {
             setContentView(R.layout.activity_game);
-            ImageView iw = (ImageView) findViewById(R.id.imageView3);
+            iw = (ImageView) findViewById(R.id.imageView3);
             BitmapDrawable image = list[count].getUri();
             iw.setImageDrawable(image);
             Button button = (Button) findViewById(R.id.button_game);
