@@ -4,7 +4,9 @@ package com.example.steffen.nameapp;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Scene;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,6 +27,7 @@ public class gameActivity extends AppCompatActivity {
     ImageAdapter ia;
     Integer score = 0;
     Integer count = 0;
+    Scene mScene;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ia = new ImageAdapter(this);
@@ -35,12 +38,15 @@ public class gameActivity extends AppCompatActivity {
         BitmapDrawable image = list[count].getUri();
         iw.setImageDrawable(image);
 
+
+
         Button button = (Button) findViewById(R.id.button_game);
 
         button.setOnClickListener( new View.OnClickListener()
         {
             public void onClick (View v){
                 answer();
+
             }
         });
     }
