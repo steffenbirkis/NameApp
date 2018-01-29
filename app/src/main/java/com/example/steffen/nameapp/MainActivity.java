@@ -1,7 +1,9 @@
 package com.example.steffen.nameapp;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.Fade;
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        checkPrefs();
     }
 
     public void onPic(View view){
@@ -38,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(myIntent, 0);
     }
 
+    public void checkPrefs(){
+        SharedPreferences prefs = this.getSharedPreferences(
+                "name", Context.MODE_PRIVATE);
+        String pref = prefs.toString();
+        if(pref.equals("name") || pref.equals("")) {
+            Intent myIntent = new Intent(this, UserPrefs.class);
+            startActivityForResult(myIntent, 0);
+        }
     }
+}
 
 
