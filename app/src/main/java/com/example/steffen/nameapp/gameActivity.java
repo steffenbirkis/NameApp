@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.transition.Scene;
+import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,8 @@ public class gameActivity extends AppCompatActivity {
     private ViewGroup mRootView;
     private Fade mFade;
     private ImageView iw;
+    private Scene mScene;
+    private TransitionManager transitionManager;
 
     @TargetApi(19)
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +53,14 @@ public class gameActivity extends AppCompatActivity {
         list = shuffleArray(list);
         setContentView(R.layout.activity_game);
 
-
         mRootView=(ViewGroup)findViewById(R.id.game);
+        TransitionInflater inflater= TransitionInflater.from(this);
+        mScene =Scene.getSceneForLayout(mRootView,R.layout.activity_game,this);
 
-        mFade=new Fade(IN);
 
-        TransitionManager.beginDelayedTransition(mRootView, mFade);
+
+
+
          iw = (ImageView) findViewById(R.id.imageView3);
         BitmapDrawable image = list[count].getUri();
         iw.setImageDrawable(image);
@@ -68,8 +73,6 @@ public class gameActivity extends AppCompatActivity {
         {
             public void onClick (View v){
 
-                fadeOutAndHideImage(iw);
-
 
 
                 answer();
@@ -78,8 +81,9 @@ public class gameActivity extends AppCompatActivity {
         });
     }
 
-
+    @TargetApi(19)
     protected void answer(){
+        transitionManager.beginDelayedTransition(mRootView);
 
         EditText user = (EditText) findViewById(R.id.editText);
         String input = user.getText().toString();
@@ -93,9 +97,11 @@ public class gameActivity extends AppCompatActivity {
         }
         count = count+1;
         if(count<list.length) {
-            setContentView(R.layout.activity_game);
+          //  setContentView(R.layout.activity_game);
             ImageView iw = (ImageView) findViewById(R.id.imageView3);
+
             BitmapDrawable image = list[count].getUri();
+            user.setText("");
             iw.setImageDrawable(image);
             Button button = (Button) findViewById(R.id.button_game);
 
@@ -124,24 +130,7 @@ public class gameActivity extends AppCompatActivity {
         }
         return ar;
     }
-    private void fadeOutAndHideImage(final ImageView img)
-    {
-        Animation fadeOut = new AlphaAnimation(1, 0);
-        fadeOut.setInterpolator(new AccelerateInterpolator());
-        fadeOut.setDuration(1000);
 
-        fadeOut.setAnimationListener(new Animation.AnimationListener()
-        {
-            public void onAnimationEnd(Animation animation)
-            {
-                img.setVisibility(View.GONE);
-            }
-            public void onAnimationRepeat(Animation animation) {}
-            public void onAnimationStart(Animation animation) {}
-        });
-
-        img.startAnimation(fadeOut);
-    }
 }
 
 
