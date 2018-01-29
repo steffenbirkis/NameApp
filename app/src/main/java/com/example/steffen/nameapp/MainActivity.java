@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(myIntent, 0);
     }
 
+    public void onPrefs(View view){
+        Intent myIntent = new Intent(view.getContext(), UserPrefs.class);
+        startActivityForResult(myIntent, 0);
+    }
+
     }
 
 
