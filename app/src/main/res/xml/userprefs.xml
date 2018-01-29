@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Username and Email">
+        <EditTextPreference
+            android:key="username"
+            android:title="Username"
+            android:summary="This is your ACME Service username"
+            android:defaultValue="username01"
+            android:dialogTitle="Enter your ACME Service username:" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Sounds and Cheats">
+        <CheckBoxPreference
+            android:key="bSoundOn"
+            android:title="Enable Sound"
+            android:summary="Turn sound on and off in the game"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

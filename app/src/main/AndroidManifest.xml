@@ -27,6 +27,7 @@
         <activity android:name=".addActivity" android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".gameActivity" android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".NamesActivity" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".UserPrefs" android:label="UserPrefs"></activity>
     </application>
 
 
