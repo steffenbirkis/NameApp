@@ -20,11 +20,13 @@ import static org.junit.Assert.*;
  * Teste alle knappene
  * Teste at alle aktivitetene starter riktig
  * Teste toLowerCase
- * 
+ *
  */
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
+
+
 }

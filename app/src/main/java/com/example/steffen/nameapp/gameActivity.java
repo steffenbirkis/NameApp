@@ -56,12 +56,6 @@ public class gameActivity extends AppCompatActivity {
         list = shuffleArray(list);
         setContentView(R.layout.activity_game);
 
-
-
-
-
-
-
          iw = (ImageView) findViewById(R.id.imageView3);
          if(list.length>0) {
              BitmapDrawable image = list[count].getUri();
@@ -77,8 +71,7 @@ public class gameActivity extends AppCompatActivity {
         button.setOnClickListener( new View.OnClickListener()
         {
             public void onClick (View v){
-
-
+                
                 animateOut(iw);
 
                 answer();
