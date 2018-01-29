@@ -18,6 +18,7 @@ import android.widget.ImageView;
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
 
+
     public ImageAdapter(Context c) {
         mContext = c;
     }
@@ -51,7 +52,9 @@ public class ImageAdapter extends BaseAdapter {
 
         
 
-
+        if(ia.length==0){
+            imageView.setImageResource(R.drawable.sample_1);
+        }
         Drawable drawable=ia[position].getUri();
 
         imageView.setImageDrawable(drawable);
@@ -71,6 +74,8 @@ public class ImageAdapter extends BaseAdapter {
 
 
     public static People plist[] = {
+
+
 
 
     };

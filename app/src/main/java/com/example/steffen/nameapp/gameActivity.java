@@ -16,6 +16,7 @@ import android.view.ViewParent;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -39,11 +40,9 @@ public class gameActivity extends AppCompatActivity {
     Integer score = 0;
     Integer count = 0;
 
-    private ViewGroup mRootView;
-    private Fade mFade;
+
     private ImageView iw;
-    private Scene mScene;
-    private TransitionManager transitionManager;
+
 
     @TargetApi(19)
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +52,7 @@ public class gameActivity extends AppCompatActivity {
         list = shuffleArray(list);
         setContentView(R.layout.activity_game);
 
-        mRootView=(ViewGroup)findViewById(R.id.game);
-        TransitionInflater inflater= TransitionInflater.from(this);
-        mScene =Scene.getSceneForLayout(mRootView,R.layout.activity_game,this);
+
 
 
 
@@ -74,6 +71,7 @@ public class gameActivity extends AppCompatActivity {
             public void onClick (View v){
 
 
+                animateOut(iw);
 
                 answer();
 
@@ -81,9 +79,7 @@ public class gameActivity extends AppCompatActivity {
         });
     }
 
-    @TargetApi(19)
     protected void answer(){
-        transitionManager.beginDelayedTransition(mRootView);
 
         EditText user = (EditText) findViewById(R.id.editText);
         String input = user.getText().toString();
@@ -104,6 +100,7 @@ public class gameActivity extends AppCompatActivity {
             user.setText("");
             iw.setImageDrawable(image);
             Button button = (Button) findViewById(R.id.button_game);
+            animateIn(iw);
 
             button.setOnClickListener( new View.OnClickListener()
             {
@@ -112,9 +109,11 @@ public class gameActivity extends AppCompatActivity {
                 }
             });
         }else{
+            animateOut(iw);
             setContentView(R.layout.activity_result);
             TextView txt = (TextView) findViewById(R.id.textView2);
             txt.setText(score.toString()+" out of "+count.toString());
+
         }
 
     }
@@ -129,6 +128,24 @@ public class gameActivity extends AppCompatActivity {
             ar[i] = a;
         }
         return ar;
+    }
+    public void animateIn(ImageView iv){
+        int fadeInDuration=1000;
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setInterpolator(new DecelerateInterpolator(1)); // add this
+        fadeIn.setDuration(fadeInDuration);
+        iv.setAnimation(fadeIn);
+        iv.startAnimation(fadeIn);
+
+    }
+    public void animateOut(ImageView iv){
+        int fadeInDuration=1000;
+        Animation fadeIn = new AlphaAnimation(1, 0);
+        fadeIn.setInterpolator(new DecelerateInterpolator(1)); // add this
+        fadeIn.setDuration(fadeInDuration);
+        iv.setAnimation(fadeIn);
+        iv.startAnimation(fadeIn);
+
     }
 
 }
