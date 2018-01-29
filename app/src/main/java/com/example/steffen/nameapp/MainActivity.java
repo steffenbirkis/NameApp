@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = this.getSharedPreferences(
                 "name", Context.MODE_PRIVATE);
         String pref = prefs.toString();
-        if(pref.equals("name") || pref.equals("")) {
+        //if(pref.equals("name") || pref.equals("")) {
             Intent myIntent = new Intent(this, UserPrefs.class);
             startActivityForResult(myIntent, 0);
-        }
+        //}
     }
 }
 
