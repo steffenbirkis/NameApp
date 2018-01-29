@@ -12,7 +12,5 @@
     <PreferenceCategory
         android:key="select_image"
         android:title="Select image">
-        <intent android:action="com.example.steffen.nameapp.PrefPic"
-            android:data="http://www.android.com" />
     </PreferenceCategory>
 </PreferenceScreen>
