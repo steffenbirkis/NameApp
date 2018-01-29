@@ -9,8 +9,8 @@
             android:defaultValue="name"
             android:dialogTitle="Enter your name:" />
     </PreferenceCategory>
-    <PreferenceCategory
+    <Preference
         android:key="select_image"
         android:title="Select image">
-    </PreferenceCategory>
+    </Preference>
 </PreferenceScreen>
