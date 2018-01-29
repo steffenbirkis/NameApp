@@ -28,6 +28,7 @@
         <activity android:name=".gameActivity" android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".NamesActivity" android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".UserPrefs" android:label="UserPrefs"></activity>
+        <activity android:name="PrefPic" android:parentActivityName=".MainActivity"></activity>
     </application>
 
 
