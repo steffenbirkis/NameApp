@@ -71,7 +71,7 @@ public class gameActivity extends AppCompatActivity {
         button.setOnClickListener( new View.OnClickListener()
         {
             public void onClick (View v){
-                
+
                 animateOut(iw);
 
                 answer();
