@@ -11,6 +11,6 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:key="select_image"
-        android:title="select image">
+        android:title="Select image">
     </PreferenceCategory>
 </PreferenceScreen>
