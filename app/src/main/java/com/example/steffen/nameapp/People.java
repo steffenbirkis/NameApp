@@ -1,5 +1,8 @@
 package com.example.steffen.nameapp;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.renderscript.Element;
 
@@ -9,11 +12,11 @@ import android.renderscript.Element;
 
 public class People {
    private String name;
-   private BitmapDrawable uri;
+   private Bitmap uri;
 
 
 
-   public People(String n, BitmapDrawable u){
+   public People(String n, Bitmap u){
        this.name=n;
        this.uri=u;
    }
@@ -22,15 +25,20 @@ public class People {
    public String getName(){
        return name;
    }
-   public BitmapDrawable getUri(){
+   public Bitmap getUri(){
        return uri;
    }
    public void setName(String names){
        this.name=names;
 
    }
-   public void setUri(BitmapDrawable uris){
-       this.uri=uris;
+   public Bitmap getBm(BitmapDrawable bd){
+       return bd.getBitmap();
+   }
+   public static  Bitmap getFromResource(Context c,int i){
+       Bitmap bm= BitmapFactory.decodeResource(c.getResources(),
+               i);
+       return bm;
    }
 
 

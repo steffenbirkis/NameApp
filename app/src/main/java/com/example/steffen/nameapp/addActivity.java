@@ -102,8 +102,9 @@ public class addActivity extends AppCompatActivity {
     public void Save(View view){
         EditText et=findViewById(R.id.Name);
         BitmapDrawable bd=new BitmapDrawable(getResources(),imageBitmap);
+        Bitmap bp=bd.getBitmap();
         String name=et.getText().toString();
-        People p=new People(name,bd);
+        People p=new People(name,bp);
 
 
         ImageAdapter.addPeople(p);

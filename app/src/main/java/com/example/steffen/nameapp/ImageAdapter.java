@@ -1,6 +1,7 @@
 package com.example.steffen.nameapp;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -16,7 +17,7 @@ import android.widget.ImageView;
  */
 
 public class ImageAdapter extends BaseAdapter {
-    private Context mContext;
+    private static Context mContext;
 
 
     public ImageAdapter(Context c) {
@@ -55,9 +56,12 @@ public class ImageAdapter extends BaseAdapter {
         if(ia.length==0){
             imageView.setImageResource(R.drawable.sample_1);
         }
-        Drawable drawable=ia[position].getUri();
+        Bitmap bm=ia[position].getUri();
 
-        imageView.setImageDrawable(drawable);
+
+
+
+        imageView.setImageBitmap(bm);
 
 
 
@@ -74,8 +78,6 @@ public class ImageAdapter extends BaseAdapter {
 
 
     public static People plist[] = {
-
-
 
 
     };
@@ -96,5 +98,6 @@ public class ImageAdapter extends BaseAdapter {
 
         plist = list;
     }
+
 
 }

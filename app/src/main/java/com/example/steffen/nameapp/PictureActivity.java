@@ -4,6 +4,7 @@ package com.example.steffen.nameapp;
  * Created by Steffen on 11.01.2018.
  */
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.provider.MediaStore;
@@ -22,7 +23,9 @@ public class PictureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
         ia = new ImageAdapter(this);
+
         final People plist[] = ia.getPeople();
+
 
             GridView gridview = (GridView) findViewById(R.id.gridview);
             gridview.setAdapter(ia);

@@ -5,6 +5,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.os.Bundle;
@@ -58,8 +59,8 @@ public class gameActivity extends AppCompatActivity {
 
          iw = (ImageView) findViewById(R.id.imageView3);
          if(list.length>0) {
-             BitmapDrawable image = list[count].getUri();
-             iw.setImageDrawable(image);
+             Bitmap image = list[count].getUri();
+             iw.setImageBitmap(image);
          }else{
              Toast.makeText(this, "You need to add pictures first", Toast.LENGTH_SHORT).show();
             finish();
@@ -97,9 +98,9 @@ public class gameActivity extends AppCompatActivity {
           //  setContentView(R.layout.activity_game);
             ImageView iw = (ImageView) findViewById(R.id.imageView3);
 
-            BitmapDrawable image = list[count].getUri();
+            Bitmap image = list[count].getUri();
             user.setText("");
-            iw.setImageDrawable(image);
+            iw.setImageBitmap(image);
             Button button = (Button) findViewById(R.id.button_game);
             animateIn(iw);
 
