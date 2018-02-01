@@ -22,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
             if(plist.length==0){
-                People a=new People("steffen",People.getFromResource(this,R.drawable.sample_1));
+                People a=new People("Steffen",People.getFromResource(this,R.drawable.sample_1));
                 People b=new People("Sondre",People.getFromResource(this, R.drawable.sample0));
+                People c=new People("Kevin",People.getFromResource(this,R.drawable.sample_4));
                 ImageAdapter.addPeople(a);
                 ImageAdapter.addPeople(b);
+                ImageAdapter.addPeople(c);
             }
         checkPrefs();
     }
