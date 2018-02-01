@@ -32,7 +32,7 @@ public class UserPrefs extends PreferenceActivity {
             PreferenceManager manager = getPreferenceManager();
             manager.setSharedPreferencesName("user_prefs");
             addPreferencesFromResource(R.xml.userprefs);
-            Preference myPref = (Preference) findPreference("select_image");
+            Preference myPref = findPreference("select_image");
             myPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     Intent myIntent = new Intent(preference.getContext(), PrefPic.class);

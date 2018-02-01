@@ -27,7 +27,7 @@ public class PictureActivity extends AppCompatActivity {
         final People plist[] = ia.getPeople();
 
 
-            GridView gridview = (GridView) findViewById(R.id.gridview);
+            GridView gridview = findViewById(R.id.gridview);
             gridview.setAdapter(ia);
 
 
