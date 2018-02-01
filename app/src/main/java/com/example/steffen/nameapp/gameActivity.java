@@ -153,6 +153,9 @@ public class gameActivity extends AppCompatActivity {
         Intent myIntent = new Intent(view.getContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
     }
+    public Integer getScore(){
+        return score;
+    }
 
 }
 
