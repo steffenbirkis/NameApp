@@ -84,7 +84,7 @@ public class gameActivityTest {
 
     @Test
     public void testScore(){
-        EditText user = (EditText) gameActivity.findViewById(R.id.editText);
+        EditText user = gameActivity.findViewById(R.id.editText);
         sendKeys("sondre");
 
 

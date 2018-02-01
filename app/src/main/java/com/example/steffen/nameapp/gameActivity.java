@@ -40,10 +40,10 @@ import static android.transition.Fade.IN;
 
 public class gameActivity extends AppCompatActivity {
 
-    People[] list;
-    ImageAdapter ia;
-    Integer score = 0;
-    Integer count = 0;
+   private People[] list;
+    private ImageAdapter ia;
+    private Integer score = 0;
+   private Integer count = 0;
 
 
     private ImageView iw;
@@ -57,7 +57,7 @@ public class gameActivity extends AppCompatActivity {
         list = shuffleArray(list);
         setContentView(R.layout.activity_game);
 
-         iw = (ImageView) findViewById(R.id.imageView3);
+         iw = findViewById(R.id.imageView3);
          if(list.length>0) {
              Bitmap image = list[count].getUri();
              iw.setImageBitmap(image);
@@ -67,7 +67,7 @@ public class gameActivity extends AppCompatActivity {
          }
 
 
-        Button button = (Button) findViewById(R.id.button_game);
+        Button button = findViewById(R.id.button_game);
 
         button.setOnClickListener( new View.OnClickListener()
         {
@@ -83,7 +83,7 @@ public class gameActivity extends AppCompatActivity {
 
     protected void answer(){
 
-        EditText user = (EditText) findViewById(R.id.editText);
+        EditText user = findViewById(R.id.editText);
         String input = user.getText().toString();
         if(input.toLowerCase().equals(list[count].getName().toLowerCase())){
             score = score+1;
@@ -96,12 +96,12 @@ public class gameActivity extends AppCompatActivity {
         count = count+1;
         if(count<list.length) {
           //  setContentView(R.layout.activity_game);
-            ImageView iw = (ImageView) findViewById(R.id.imageView3);
+            ImageView iw = findViewById(R.id.imageView3);
 
             Bitmap image = list[count].getUri();
             user.setText("");
             iw.setImageBitmap(image);
-            Button button = (Button) findViewById(R.id.button_game);
+            Button button = findViewById(R.id.button_game);
             animateIn(iw);
 
             button.setOnClickListener( new View.OnClickListener()
@@ -113,7 +113,7 @@ public class gameActivity extends AppCompatActivity {
         }else{
             animateOut(iw);
             setContentView(R.layout.activity_result);
-            TextView txt = (TextView) findViewById(R.id.textView2);
+            TextView txt = findViewById(R.id.textView2);
             txt.setText(score.toString()+" out of "+count.toString());
 
         }
@@ -153,7 +153,7 @@ public class gameActivity extends AppCompatActivity {
         Intent myIntent = new Intent(view.getContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
     }
-    public Integer getScore(){
+    public  Integer getScore(){
         return score;
     }
 

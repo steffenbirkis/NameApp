@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -42,6 +43,7 @@ public class PrefPic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtopref);
         mImageView = findViewById(R.id.imgview);
+        directory();
         viewImg("ImageDir");
         Button butt = findViewById(R.id.button2);
         butt.setOnClickListener(new View.OnClickListener() {
@@ -58,10 +60,21 @@ public class PrefPic extends AppCompatActivity {
 
         }
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            imageBitmap = (Bitmap) extras.get("data");
+            mImageView.setImageBitmap(imageBitmap);
+        }
+
+    }
 
     public void prefSave(View view) {
         BitmapDrawable bd = new BitmapDrawable(getResources(), imageBitmap);
         Bitmap bp = bd.getBitmap();
+        mImageView.setImageBitmap(bp);
         saveToInternalStorage(bp);
         finish();
 
@@ -106,5 +119,16 @@ public class PrefPic extends AppCompatActivity {
                 mImageView.setImageBitmap(b);
             }
     }
+
+    private void directory(){
+        String fname = "imageDir";
+        File folder = getFilesDir();
+        File f= new File(folder, fname);
+        if(!f.exists()){
+            f.mkdir();
+        }
+    }
 }
+
+
 

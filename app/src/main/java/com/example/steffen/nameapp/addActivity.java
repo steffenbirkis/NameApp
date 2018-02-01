@@ -33,19 +33,7 @@ import java.util.Date;
 
 public class addActivity extends AppCompatActivity {
 
-    /** Sjekke om det er kamera på enheten */
-    /**
-    private boolean checkCameraHardware(Context context) {
 
-
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){
-            // Enheten har kamera
-            return true;
-        } else {
-            // Enheten har ikke kamera
-            return false;
-        }
-    }*/
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static final int REQUEST_TAKE_PHOTO = 1;
 
@@ -54,13 +42,7 @@ public class addActivity extends AppCompatActivity {
     private Bitmap imageBitmap;
 
 
-
-
-
-
-
-
-        @Override
+    @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_add);
@@ -81,11 +63,6 @@ public class addActivity extends AppCompatActivity {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
 
         }}
-
-
-
-
-
 
 
     @Override
@@ -109,17 +86,6 @@ public class addActivity extends AppCompatActivity {
 
         ImageAdapter.addPeople(p);
         finish();
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
