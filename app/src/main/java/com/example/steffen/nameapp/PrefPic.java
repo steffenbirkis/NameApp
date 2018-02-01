@@ -37,14 +37,14 @@ public class PrefPic extends AppCompatActivity {
     private ImageView mImageView;
     private String mCurrentPhotoPath;
     private Bitmap imageBitmap;
-
+    private String path;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtopref);
         mImageView = findViewById(R.id.imgview);
         directory();
-        viewImg("ImageDir");
+        viewImg(path);
         Button butt = findViewById(R.id.button2);
         butt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -75,7 +75,7 @@ public class PrefPic extends AppCompatActivity {
         BitmapDrawable bd = new BitmapDrawable(getResources(), imageBitmap);
         Bitmap bp = bd.getBitmap();
         mImageView.setImageBitmap(bp);
-        saveToInternalStorage(bp);
+        path = saveToInternalStorage(bp);
         finish();
 
     }
