@@ -27,7 +27,7 @@ public class NamesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_names);
 
-        ListView listview = (ListView) findViewById(R.id.names_listview);
+        ListView listview = findViewById(R.id.names_listview);
         final People list[];
         String stringlist[];
         ImageAdapter ia = new ImageAdapter(this);
@@ -43,7 +43,7 @@ public class NamesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 setContentView(R.layout.activity_singlepic);
-                ImageView iw = (ImageView) findViewById(R.id.ImageView2);
+                ImageView iw = findViewById(R.id.ImageView2);
                 Bitmap image = list[position].getUri();
                 iw.setImageBitmap(image);
             }
