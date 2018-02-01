@@ -64,6 +64,7 @@ public class PrefPic extends AppCompatActivity {
     public void prefSave(View view) {
         BitmapDrawable bd = new BitmapDrawable(getResources(), imageBitmap);
         Bitmap bp = bd.getBitmap();
+        mImageView.setImageBitmap(bp);
         saveToInternalStorage(bp);
         finish();
 
