@@ -33,13 +33,11 @@ public class gameActivityTest {
     Integer score;
     Integer count;
 
-    private String typeSteffen;
-    private String typeSondre;
-    private String typeKevin;
+    private String typeSteffen, typeSondre, typeKevin;
 
     @Rule
-    public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
-            MainActivity.class);
+    public ActivityTestRule<gameActivity> mActivityRule = new ActivityTestRule<>(
+            gameActivity.class);
 
     @Before
     public void initValidString() {
@@ -51,9 +49,12 @@ public class gameActivityTest {
 
     @Test
     public void answer() throws Exception {
-        testPeopleList = ia.getPeople();
+
+
+        //testPeopleList = ia.getPeople();
 
         // Type text and then press the button. Then do it 3 times.
+        // maybe we need to remove shuffling of the array in gameActivity
         onView(withId(R.id.editText))
                 .perform(typeText(typeSteffen), closeSoftKeyboard());
         onView(withId(R.id.button_game)).perform(click());
@@ -65,6 +66,8 @@ public class gameActivityTest {
         onView(withId(R.id.editText))
                 .perform(typeText(typeKevin), closeSoftKeyboard());
         onView(withId(R.id.button_game)).perform(click());
+
+        assertEquals(3, )
 
         // Check that the text was changed. CHANGEEE
         onView(withId(R.id.textToBeChanged))
