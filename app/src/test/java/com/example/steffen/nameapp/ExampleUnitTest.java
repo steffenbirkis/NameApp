@@ -12,11 +12,11 @@ import static org.junit.Assert.*;
 
 /**
  * TODO:
- * Teste at score blir oppdatert riktig
+ * Teste at score blir oppdatert riktig DONE
  * Teste utvidelse av bildelisten når et bilde blir lagt til
  * Teste at en person blir opprettet riktig
  * Teste om settings åpner seg automatisk når appen åpnes for første gang
- * Teste spillet
+ * Teste spillet DONE
  * Teste alle knappene
  * Teste at alle aktivitetene starter riktig
  * Teste toLowerCase

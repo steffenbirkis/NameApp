@@ -1,9 +1,8 @@
 package com.example.steffen.nameapp;
 
-import android.test.suitebuilder.annotation.LargeTest;
-import android.widget.EditText;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.test.suitebuilder.annotation.LargeTest;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,7 +17,7 @@ import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Schnappi on 29.01.2018.
@@ -32,7 +31,7 @@ public class gameActivityTest {
     private String typeSteffen, typeSondre, typeKevin;
 
     @Rule
-    public ActivityTestRule<gameActivity> mActivityRule = new ActivityTestRule<>(gameActivity.class);
+    public ActivityTestRule<gameActivity> gActivityRule = new ActivityTestRule<>(gameActivity.class);
 
     @Before
     public void initValidString() {
@@ -61,7 +60,7 @@ public class gameActivityTest {
         onView(withId(R.id.button_game)).perform(click());
 
         //somebody toucha my SPAGHET >:(
-        int scoree = mActivityRule.getActivity().getScore();
+        int scoree = gActivityRule.getActivity().getScore();
         Assert.assertEquals(1, scoree);
 
     }
