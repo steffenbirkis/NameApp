@@ -82,6 +82,7 @@ public class gameActivityTest {
         assertEquals("sondre", testList[0].toLowerCase());
         assertEquals("steffen", testList[1].toLowerCase());
         assertEquals("kevin", testList[2].toLowerCase());
+        
     }
 
 }
