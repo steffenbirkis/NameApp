@@ -2,28 +2,14 @@ package com.example.steffen.nameapp;
 
 
 import android.annotation.TargetApi;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Fade;
-import android.transition.Scene;
-import android.transition.TransitionInflater;
-import android.transition.TransitionManager;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,19 +18,16 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-import static android.transition.Fade.IN;
-import static com.example.steffen.nameapp.ImageAdapter.plist;
-
 /**
  * Created by kevin on 22-Jan-18.
  */
 
 public class gameActivity extends AppCompatActivity {
 
-   private People[] list;
+    private People[] list;
     private ImageAdapter ia;
     private Integer score = 0;
-   private Integer count = 0;
+    private Integer count = 0;
 
 
     private ImageView iw;
@@ -58,28 +41,27 @@ public class gameActivity extends AppCompatActivity {
         list = shuffleArray(list);
         setContentView(R.layout.activity_game);
 
-         iw = findViewById(R.id.imageView3);
-         if(list.length>0) {
-             Bitmap image = list[count].getUri();
-             iw.setImageBitmap(image);
-         }else{
-             Toast.makeText(this, "You need to add pictures first", Toast.LENGTH_SHORT).show();
+        iw = findViewById(R.id.imageView3);
+        if (list.length > 0) {
+            Bitmap image = list[count].getUri();
+            iw.setImageBitmap(image);
+        } else {
+            Toast.makeText(this, "You need to add pictures first", Toast.LENGTH_SHORT).show();
             finish();
-         }
+        }
 
-        if(list.length==0){
-            People a=new People("Steffen",People.getFromResource(this,R.drawable.sample_1));
-            People b=new People("Sondre",People.getFromResource(this, R.drawable.sample0));
-            People c=new People("Kevin",People.getFromResource(this,R.drawable.sample_4));
+        if (list.length == 0) {
+            People a = new People("Steffen", People.getFromResource(this, R.drawable.sample_1));
+            People b = new People("Sondre", People.getFromResource(this, R.drawable.sample0));
+            People c = new People("Kevin", People.getFromResource(this, R.drawable.sample_4));
             ImageAdapter.addPeople(a);
             ImageAdapter.addPeople(b);
             ImageAdapter.addPeople(c);
         }
         Button button = findViewById(R.id.button_game);
 
-        button.setOnClickListener( new View.OnClickListener()
-        {
-            public void onClick (View v){
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
 
                 animateOut(iw);
 
@@ -89,21 +71,21 @@ public class gameActivity extends AppCompatActivity {
         });
     }
 
-    protected void answer(){
+    protected void answer() {
 
         EditText user = findViewById(R.id.editText);
         String input = user.getText().toString();
-        if(input.toLowerCase().equals(list[count].getName().toLowerCase())){
-            score = score+1;
-            Toast.makeText(gameActivity.this, "Correct - Current Score:"+score,
+        if (input.toLowerCase().equals(list[count].getName().toLowerCase())) {
+            score = score + 1;
+            Toast.makeText(gameActivity.this, "Correct - Current Score:" + score,
                     Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(gameActivity.this, "Wrong - Current Score:"+score,
+        } else {
+            Toast.makeText(gameActivity.this, "Wrong - Current Score:" + score,
                     Toast.LENGTH_LONG).show();
         }
-        count = count+1;
-        if(count<list.length) {
-          //  setContentView(R.layout.activity_game);
+        count = count + 1;
+        if (count < list.length) {
+            //  setContentView(R.layout.activity_game);
             ImageView iw = findViewById(R.id.imageView3);
 
             Bitmap image = list[count].getUri();
@@ -112,26 +94,24 @@ public class gameActivity extends AppCompatActivity {
             Button button = findViewById(R.id.button_game);
             animateIn(iw);
 
-            button.setOnClickListener( new View.OnClickListener()
-            {
-                public void onClick (View v){
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
                     answer();
                 }
             });
-        }else{
+        } else {
             animateOut(iw);
             setContentView(R.layout.activity_result);
             TextView txt = findViewById(R.id.textView2);
-            txt.setText(score.toString()+" out of "+count.toString());
+            txt.setText(score.toString() + " out of " + count.toString());
 
         }
 
     }
-    static People[] shuffleArray(People[] ar)
-    {
+
+    static People[] shuffleArray(People[] ar) {
         Random rnd = new Random();
-        for (int i = ar.length - 1; i > 0; i--)
-        {
+        for (int i = ar.length - 1; i > 0; i--) {
             int index = rnd.nextInt(i + 1);
             People a = ar[index];
             ar[index] = ar[i];
@@ -139,8 +119,9 @@ public class gameActivity extends AppCompatActivity {
         }
         return ar;
     }
-    public void animateIn(ImageView iv){
-        int fadeInDuration=1000;
+
+    public void animateIn(ImageView iv) {
+        int fadeInDuration = 1000;
         Animation fadeIn = new AlphaAnimation(0, 1);
         fadeIn.setInterpolator(new DecelerateInterpolator(1)); // add this
         fadeIn.setDuration(fadeInDuration);
@@ -148,8 +129,9 @@ public class gameActivity extends AppCompatActivity {
         iv.startAnimation(fadeIn);
 
     }
-    public void animateOut(ImageView iv){
-        int fadeInDuration=1000;
+
+    public void animateOut(ImageView iv) {
+        int fadeInDuration = 1000;
         Animation fadeIn = new AlphaAnimation(1, 0);
         fadeIn.setInterpolator(new DecelerateInterpolator(1)); // add this
         fadeIn.setDuration(fadeInDuration);
@@ -157,11 +139,13 @@ public class gameActivity extends AppCompatActivity {
         iv.startAnimation(fadeIn);
 
     }
-    public void back(View view){
+
+    public void back(View view) {
         Intent myIntent = new Intent(view.getContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
     }
-    public  Integer getScore(){
+
+    public Integer getScore() {
         return score;
     }
 

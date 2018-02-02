@@ -2,8 +2,6 @@ package com.example.steffen.nameapp;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,11 +9,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by kevin on 18-Jan-18.
@@ -33,7 +26,7 @@ public class NamesActivity extends AppCompatActivity {
         ImageAdapter ia = new ImageAdapter(this);
         list = ia.getPeople();
         stringlist = new String[list.length];
-        for(int i = 0; i<list.length; i++){
+        for (int i = 0; i < list.length; i++) {
             stringlist[i] = list[i].getName();
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, stringlist);
@@ -48,8 +41,8 @@ public class NamesActivity extends AppCompatActivity {
                 iw.setImageBitmap(image);
             }
         });
-
     }
+
     public void addNew(View view) {
         Intent myIntent = new Intent(view.getContext(), addActivity.class);
         startActivityForResult(myIntent, 0);
