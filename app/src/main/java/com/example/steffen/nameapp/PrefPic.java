@@ -8,17 +8,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.os.Environment;
-import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,7 +28,6 @@ public class PrefPic extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static final int REQUEST_TAKE_PHOTO = 1;
-
     private ImageView mImageView;
     private String mCurrentPhotoPath;
     private Bitmap imageBitmap;
@@ -48,7 +41,7 @@ public class PrefPic extends AppCompatActivity {
         SharedPreferences prefs = this.getSharedPreferences(
                 "path", Context.MODE_PRIVATE);
         path = prefs.toString();
-        if(path != null){
+        if (path != null) {
             viewImg(path);
         }
         Button butt = findViewById(R.id.button2);
@@ -66,6 +59,7 @@ public class PrefPic extends AppCompatActivity {
 
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -86,12 +80,12 @@ public class PrefPic extends AppCompatActivity {
 
     }
 
-    private String saveToInternalStorage(Bitmap bitmapImage){
+    private String saveToInternalStorage(Bitmap bitmapImage) {
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
         // Create imageDir
-        File mypath=new File(directory,"profile.jpg");
+        File mypath = new File(directory, "profile.jpg");
 
         FileOutputStream fos = null;
         try {
@@ -110,32 +104,30 @@ public class PrefPic extends AppCompatActivity {
 
         SharedPreferences settingsActivity = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor prefEditor = settingsActivity.edit();
-        prefEditor.putString("path",directory.getAbsolutePath());
+        prefEditor.putString("path", directory.getAbsolutePath());
         prefEditor.commit();
         return directory.getAbsolutePath();
     }
 
-    private void viewImg(String path){
+    private void viewImg(String path) {
         Bitmap b = null;
-            try {
-                File f=new File(path, "profile.jpg");
-                b = BitmapFactory.decodeStream(new FileInputStream(f));
-            }
-            catch (FileNotFoundException e)
-            {
-                e.printStackTrace();
-            }
+        try {
+            File f = new File(path, "profile.jpg");
+            b = BitmapFactory.decodeStream(new FileInputStream(f));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
-            if(b != null){
-                mImageView.setImageBitmap(b);
-            }
+        if (b != null) {
+            mImageView.setImageBitmap(b);
+        }
     }
 
-    private void directory(){
+    private void directory() {
         String fname = "imageDir";
         File folder = getFilesDir();
-        File f= new File(folder, fname);
-        if(!f.exists()){
+        File f = new File(folder, fname);
+        if (!f.exists()) {
             f.mkdir();
         }
     }

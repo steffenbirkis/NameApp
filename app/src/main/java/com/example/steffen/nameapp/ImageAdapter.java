@@ -2,10 +2,6 @@ package com.example.steffen.nameapp;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -48,46 +44,22 @@ public class ImageAdapter extends BaseAdapter {
         } else {
             imageView = (ImageView) convertView;
         }
-
         People[] ia = getPeople();
-
-        
-
-        if(ia.length==0){
+        if (ia.length == 0) {
             imageView.setImageResource(R.drawable.sample_1);
         }
-        Bitmap bm=ia[position].getUri();
-
-
-
-
+        Bitmap bm = ia[position].getUri();
         imageView.setImageBitmap(bm);
-
-
-
-
-
-
-
         return imageView;
 
     }
 
     // references to our images
-
-
-
-    public static People plist[] = {
-
-
-    };
-
+    public static People plist[] = {};
 
     public People[] getPeople() {
-
         return plist;
     }
-
 
     public static void addPeople(People s) {
         People list[] = new People[plist.length + 1];
@@ -95,9 +67,6 @@ public class ImageAdapter extends BaseAdapter {
             list[i] = plist[i];
         }
         list[list.length - 1] = s;
-
         plist = list;
     }
-
-
 }

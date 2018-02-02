@@ -1,14 +1,13 @@
 package com.example.steffen.nameapp;
+
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.view.Menu;
-import android.view.MenuItem;
 
 /**
  * Created by kevin on 25-Jan-18.
