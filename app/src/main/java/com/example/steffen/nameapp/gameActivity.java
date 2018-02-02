@@ -33,6 +33,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 import static android.transition.Fade.IN;
+import static com.example.steffen.nameapp.ImageAdapter.plist;
 
 /**
  * Created by kevin on 22-Jan-18.
@@ -66,7 +67,14 @@ public class gameActivity extends AppCompatActivity {
             finish();
          }
 
-
+        if(plist.length==0){
+            People a=new People("Steffen",People.getFromResource(this,R.drawable.sample_1));
+            People b=new People("Sondre",People.getFromResource(this, R.drawable.sample0));
+            People c=new People("Kevin",People.getFromResource(this,R.drawable.sample_4));
+            ImageAdapter.addPeople(a);
+            ImageAdapter.addPeople(b);
+            ImageAdapter.addPeople(c);
+        }
         Button button = findViewById(R.id.button_game);
 
         button.setOnClickListener( new View.OnClickListener()
