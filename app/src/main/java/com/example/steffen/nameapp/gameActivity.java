@@ -67,7 +67,7 @@ public class gameActivity extends AppCompatActivity {
             finish();
          }
 
-        if(plist.length==0){
+        if(list.length==0){
             People a=new People("Steffen",People.getFromResource(this,R.drawable.sample_1));
             People b=new People("Sondre",People.getFromResource(this, R.drawable.sample0));
             People c=new People("Kevin",People.getFromResource(this,R.drawable.sample_4));

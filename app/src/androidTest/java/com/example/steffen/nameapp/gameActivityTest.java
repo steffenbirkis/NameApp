@@ -29,11 +29,6 @@ public class gameActivityTest {
 
     private String[] testList = {"Sondre", "steFFen", "keviN"};
 
-    People[] testPeopleList;
-    ImageAdapter ia;
-    Integer score;
-    Integer count;
-
     private String typeSteffen, typeSondre, typeKevin;
 
     @Rule
@@ -50,30 +45,25 @@ public class gameActivityTest {
     @Test
     public void answer() throws Exception {
 
-        //testPeopleList = ia.getPeople();
-
         // Type text and then press the button. Then do it 3 times.
         // maybe we need to remove shuffling of the array in gameActivity
-        onView(withId(R.id.editText)).perform(typeText(typeSteffen), closeSoftKeyboard());
+        onView(withId(R.id.editText)).perform(typeText(typeSondre), closeSoftKeyboard());
 
         // Quick check if editText was changed.
-        onView(withId(R.id.editText)).check(matches(withText(typeSteffen)));
+        onView(withId(R.id.editText)).check(matches(withText(typeSondre)));
 
         onView(withId(R.id.button_game)).perform(click());
 
         onView(withId(R.id.editText)).perform(typeText(typeSondre), closeSoftKeyboard());
         onView(withId(R.id.button_game)).perform(click());
 
-        onView(withId(R.id.editText)).perform(typeText(typeKevin), closeSoftKeyboard());
+        onView(withId(R.id.editText)).perform(typeText(typeSondre), closeSoftKeyboard());
         onView(withId(R.id.button_game)).perform(click());
 
         //somebody toucha my SPAGHET >:(
         int scoree = mActivityRule.getActivity().getScore();
-        Assert.assertEquals(3, scoree);
+        Assert.assertEquals(1, scoree);
 
-        // Check that the text was changed. CHANGEEE
-        //onView(withId(R.id.textToBeChanged))
-        //        .check(matches(withText(mStringToBetyped)));
     }
 
     @Test
@@ -82,7 +72,7 @@ public class gameActivityTest {
         assertEquals("sondre", testList[0].toLowerCase());
         assertEquals("steffen", testList[1].toLowerCase());
         assertEquals("kevin", testList[2].toLowerCase());
-        
+
     }
 
 }
