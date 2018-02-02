@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -37,14 +38,19 @@ public class PrefPic extends AppCompatActivity {
     private ImageView mImageView;
     private String mCurrentPhotoPath;
     private Bitmap imageBitmap;
-
+    private String path;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtopref);
         mImageView = findViewById(R.id.imgview);
         directory();
-        viewImg("ImageDir");
+        SharedPreferences prefs = this.getSharedPreferences(
+                "path", Context.MODE_PRIVATE);
+        path = prefs.toString();
+        if(path != null){
+            viewImg(path);
+        }
         Button butt = findViewById(R.id.button2);
         butt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -75,7 +81,7 @@ public class PrefPic extends AppCompatActivity {
         BitmapDrawable bd = new BitmapDrawable(getResources(), imageBitmap);
         Bitmap bp = bd.getBitmap();
         mImageView.setImageBitmap(bp);
-        saveToInternalStorage(bp);
+        path = saveToInternalStorage(bp);
         finish();
 
     }
@@ -101,6 +107,11 @@ public class PrefPic extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
+        SharedPreferences settingsActivity = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = settingsActivity.edit();
+        prefEditor.putString("path",directory.getAbsolutePath());
+        prefEditor.commit();
         return directory.getAbsolutePath();
     }
 
