@@ -1,4 +1,4 @@
-package com.example.steffen.nameapp;
+package com.example.steffen.nameapp.Logic;
 
 import android.content.Context;
 import android.graphics.Bitmap;

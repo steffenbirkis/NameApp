@@ -1,4 +1,4 @@
-package com.example.steffen.nameapp;
+package com.example.steffen.nameapp.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import static com.example.steffen.nameapp.ImageAdapter.plist;
+import com.example.steffen.nameapp.Logic.ImageAdapter;
+import com.example.steffen.nameapp.Logic.People;
+import com.example.steffen.nameapp.R;
+
+import static com.example.steffen.nameapp.Logic.ImageAdapter.plist;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -4,6 +4,12 @@ import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import com.example.steffen.nameapp.Activities.MainActivity;
+import com.example.steffen.nameapp.Activities.NamesActivity;
+import com.example.steffen.nameapp.Activities.PictureActivity;
+import com.example.steffen.nameapp.Activities.UserPrefs;
+import com.example.steffen.nameapp.Activities.gameActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;

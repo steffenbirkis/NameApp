@@ -1,4 +1,4 @@
-package com.example.steffen.nameapp;
+package com.example.steffen.nameapp.Activities;
 
 
 import android.annotation.TargetApi;
@@ -15,6 +15,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.steffen.nameapp.Logic.ImageAdapter;
+import com.example.steffen.nameapp.Logic.People;
+import com.example.steffen.nameapp.R;
 
 import java.util.Random;
 

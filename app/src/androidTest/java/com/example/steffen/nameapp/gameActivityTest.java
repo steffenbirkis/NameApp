@@ -4,6 +4,8 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import com.example.steffen.nameapp.Activities.gameActivity;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;

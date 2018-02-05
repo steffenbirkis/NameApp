@@ -1,4 +1,4 @@
-package com.example.steffen.nameapp;
+package com.example.steffen.nameapp.Activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -9,6 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.example.steffen.nameapp.Logic.ImageAdapter;
+import com.example.steffen.nameapp.Logic.People;
+import com.example.steffen.nameapp.R;
 
 /**
  * Created by kevin on 18-Jan-18.

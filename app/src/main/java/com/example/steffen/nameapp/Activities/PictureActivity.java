@@ -1,4 +1,4 @@
-package com.example.steffen.nameapp;
+package com.example.steffen.nameapp.Activities;
 
 /**
  * Created by Steffen on 11.01.2018.
@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
+
+import com.example.steffen.nameapp.Logic.ImageAdapter;
+import com.example.steffen.nameapp.Logic.People;
+import com.example.steffen.nameapp.R;
 
 public class PictureActivity extends AppCompatActivity {
     private ImageAdapter ia;

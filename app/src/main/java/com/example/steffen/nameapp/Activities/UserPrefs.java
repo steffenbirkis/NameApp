@@ -1,4 +1,4 @@
-package com.example.steffen.nameapp;
+package com.example.steffen.nameapp.Activities;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -8,6 +8,9 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+
+import com.example.steffen.nameapp.Activities.PrefPic;
+import com.example.steffen.nameapp.R;
 
 /**
  * Created by kevin on 25-Jan-18.
