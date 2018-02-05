@@ -37,8 +37,9 @@ public class PrefPic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtopref);
         mImageView = findViewById(R.id.imgview);
-        directory();
-        viewImg("imgdir");
+        //directory();
+        //viewImg("imgdir");
+        viewImg2();
         Button butt = findViewById(R.id.button2);
         butt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -70,7 +71,8 @@ public class PrefPic extends AppCompatActivity {
         BitmapDrawable bd = new BitmapDrawable(getResources(), imageBitmap);
         Bitmap bp = bd.getBitmap();
         mImageView.setImageBitmap(bp);
-        saveToInternalStorage(bp);
+        //saveToInternalStorage(bp);
+        save2(bp);
         finish();
 
     }
@@ -122,6 +124,21 @@ public class PrefPic extends AppCompatActivity {
         if (!f.exists()) {
             f.mkdir();
         }
+    }
+
+    public void save2(Bitmap bitmap){
+        new ImageSaver(this).
+                setFileName("myImage.png").
+                setDirectoryName("images").
+                save(bitmap);
+    }
+
+    public void viewImg2(){
+        Bitmap bitmap = new ImageSaver(this).
+                setFileName("myImage.png").
+                setDirectoryName("images").
+                load();
+        mImageView.setImageBitmap(bitmap);
     }
 }
 
