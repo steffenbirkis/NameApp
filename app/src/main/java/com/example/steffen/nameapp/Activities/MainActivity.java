@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        checkPrefs();
 
         if (plist.length == 0) {
             People a = new People("Steffen", People.getFromResource(this, R.drawable.sample_1));
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             ImageAdapter.addPeople(b);
             ImageAdapter.addPeople(c);
         }
-        checkPrefs();
+
     }
 
     public void onPic(View view) {

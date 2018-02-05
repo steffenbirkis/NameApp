@@ -23,7 +23,7 @@ import com.example.steffen.nameapp.R;
 import java.util.Random;
 
 /**
- * Created by kevin on 22-Jan-18.
+ * Created by kevin on 22-Jan-18.   //shuffles the pictures array and starts the learning game
  */
 
 public class gameActivity extends AppCompatActivity {

@@ -16,7 +16,7 @@ import com.example.steffen.nameapp.Logic.ImageAdapter;
 import com.example.steffen.nameapp.Logic.People;
 import com.example.steffen.nameapp.R;
 
-public class PictureActivity extends AppCompatActivity {
+public class PictureActivity extends AppCompatActivity {        //Uses Imageadapter to place thumbnails in a gridview
     private ImageAdapter ia;
 
     @Override
