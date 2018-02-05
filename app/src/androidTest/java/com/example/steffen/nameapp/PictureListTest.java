@@ -25,6 +25,6 @@ public class PictureListTest {
     @Test
     public void theInitialNamesAreOnTheListWhenLaunched(){
         onView(withId(R.id.Bilder)).perform(click());
-        onView (withId (R.id.gridview)).check (ViewAssertions.matches (HelpClass.withListSize (numberOfDefaultUsers)));
+        onView (withId (R.id.gridview)).check (ViewAssertions.matches (GridHelpClass.withGridSize (numberOfDefaultUsers)));
     }
 }

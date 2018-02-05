@@ -10,7 +10,7 @@ import org.hamcrest.TypeSafeMatcher;
  * Created by kevin on 05-Feb-18.
  */
 
-public class HelpClass {
+public class ListHelpClass {
     public static Matcher<View> withListSize (final int size) {
         return new TypeSafeMatcher<View>() {
             @Override public boolean matchesSafely (final View view) {

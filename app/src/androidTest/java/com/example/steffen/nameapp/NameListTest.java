@@ -25,6 +25,6 @@ public class NameListTest {
         @Test
         public void theInitialNamesAreOnTheListWhenLaunched(){
             onView(withId(R.id.Navn)).perform(click());
-            onView (withId (R.id.names_listview)).check (ViewAssertions.matches (HelpClass.withListSize (numberOfDefaultUsers)));
+            onView (withId (R.id.names_listview)).check (ViewAssertions.matches (ListHelpClass.withListSize (numberOfDefaultUsers)));
         }
     }
