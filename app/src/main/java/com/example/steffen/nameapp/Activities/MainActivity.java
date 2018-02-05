@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        boolean named = false;
+
         setContentView(R.layout.activity_main);
+        checkPrefs();
 
         if (plist.length == 0) {
             People a = new People("Steffen", People.getFromResource(this, R.drawable.sample_1));
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             ImageAdapter.addPeople(b);
             ImageAdapter.addPeople(c);
         }
-        named = checkPrefs();
+
     }
 
     public void onPic(View view) {
@@ -52,16 +53,14 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(myIntent, 0);
     }
 
-    public boolean checkPrefs() {
+    public void checkPrefs() {
         SharedPreferences prefs = this.getSharedPreferences(
                 "name", Context.MODE_PRIVATE);
         String pref = prefs.toString();
         if (pref.equals("name") || pref.equals("")) {
             Intent myIntent = new Intent(this, UserPrefs.class);
             startActivityForResult(myIntent, 0);
-            return false;
         }
-        return true;
     }
 }
 

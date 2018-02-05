@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.steffen.nameapp.Logic.ImageAdapter;
 import com.example.steffen.nameapp.Logic.People;
@@ -19,7 +20,7 @@ import com.example.steffen.nameapp.R;
  * Created by Steffen on 11.01.2018.
  */
 
-public class addActivity extends AppCompatActivity {
+public class addActivity extends AppCompatActivity {        //Starts the camera and saves it temporary in the array
 
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -66,17 +67,33 @@ public class addActivity extends AppCompatActivity {
     }
 
     public void Save(View view) {
+
         EditText et = findViewById(R.id.Name);
+
         BitmapDrawable bd = new BitmapDrawable(getResources(), imageBitmap);
+
         Bitmap bp = bd.getBitmap();
         String name = et.getText().toString();
         People p = new People(name, bp);
+        if(p.getName().equals("")){
+            Toast.makeText(this, "You need to add a name", Toast.LENGTH_SHORT).show();
 
+        }
 
+        else if (bp==null) {
+            Toast.makeText(this, "You need to take a picture first", Toast.LENGTH_SHORT).show();
+
+        } else{
         ImageAdapter.addPeople(p);
-        finish();
+        onSaved(view);
+
+        }
 
 
+    }
+    public void onSaved(View view) {
+        Intent myIntent = new Intent(view.getContext(), MainActivity.class);
+        startActivityForResult(myIntent, 0);
     }
 
 }
