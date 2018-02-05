@@ -18,7 +18,7 @@ import com.example.steffen.nameapp.R;
  * Created by kevin on 18-Jan-18.
  */
 
-public class NamesActivity extends AppCompatActivity {
+public class NamesActivity extends AppCompatActivity {          //Gets names from our list and shows them in a listview
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +47,7 @@ public class NamesActivity extends AppCompatActivity {
         });
     }
 
-    public void addNew(View view) {
+    public void addNew(View view) {         //Starts the addActivity
         Intent myIntent = new Intent(view.getContext(), addActivity.class);
         startActivityForResult(myIntent, 0);
     }
