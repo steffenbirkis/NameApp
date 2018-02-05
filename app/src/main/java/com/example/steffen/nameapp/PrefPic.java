@@ -31,19 +31,14 @@ public class PrefPic extends AppCompatActivity {
     private ImageView mImageView;
     private String mCurrentPhotoPath;
     private Bitmap imageBitmap;
-    private String path;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtopref);
         mImageView = findViewById(R.id.imgview);
         directory();
-        SharedPreferences prefs = this.getSharedPreferences(
-                "path", Context.MODE_PRIVATE);
-        path = prefs.toString();
-        if (path != null) {
-            viewImg(path);
-        }
+        viewImg("imgdir");
         Button butt = findViewById(R.id.button2);
         butt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -75,7 +70,7 @@ public class PrefPic extends AppCompatActivity {
         BitmapDrawable bd = new BitmapDrawable(getResources(), imageBitmap);
         Bitmap bp = bd.getBitmap();
         mImageView.setImageBitmap(bp);
-        path = saveToInternalStorage(bp);
+        saveToInternalStorage(bp);
         finish();
 
     }
@@ -83,7 +78,7 @@ public class PrefPic extends AppCompatActivity {
     private String saveToInternalStorage(Bitmap bitmapImage) {
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         // path to /data/data/yourapp/app_data/imageDir
-        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+        File directory = cw.getDir("imgdir", Context.MODE_PRIVATE);
         // Create imageDir
         File mypath = new File(directory, "profile.jpg");
 
@@ -102,10 +97,7 @@ public class PrefPic extends AppCompatActivity {
             }
         }
 
-        SharedPreferences settingsActivity = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor prefEditor = settingsActivity.edit();
-        prefEditor.putString("path", directory.getAbsolutePath());
-        prefEditor.commit();
+
         return directory.getAbsolutePath();
     }
 

@@ -13,13 +13,4 @@
         android:key="select_image"
         android:title="Image">
     </Preference>
-    <PreferenceCategory
-        android:title="path">
-    <EditTextPreference
-        android:key="path"
-        android:title="path"
-        android:defaultValue="path">
-
-    </EditTextPreference>
-    </PreferenceCategory>
 </PreferenceScreen>
