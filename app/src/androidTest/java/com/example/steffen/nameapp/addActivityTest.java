@@ -59,7 +59,7 @@ public class addActivityTest {
         intended(hasComponent(addActivity.class.getName()));
 
         onView(withId(R.id.Name)).perform(clearText()).perform(typeText(typeName), closeSoftKeyboard());
-        mockTakePhoto()
+        mockTakePhoto();
         onView(withId(R.id.Save)).perform(click());
 
         assertEquals(4, plist.length);
