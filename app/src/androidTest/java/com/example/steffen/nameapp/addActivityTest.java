@@ -60,6 +60,7 @@ public class addActivityTest {
 
         onView(withId(R.id.Name)).perform(clearText()).perform(typeText(typeName), closeSoftKeyboard());
         mockTakePhoto();
+
         onView(withId(R.id.Save)).perform(click());
 
         assertEquals(4, plist.length);
